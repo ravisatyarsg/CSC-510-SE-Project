@@ -8,20 +8,20 @@ const fs = require('fs');
 const path = require('path');
 
 // Mock the routes and users before requiring server
-jest.mock('../src/backend/routes/home', () => {
+jest.mock('../../src/backend/routes/home', () => {
   const router = require('express').Router();
   router.get('/restaurants', (req, res) => res.json([]));
   router.get('/impact', (req, res) => res.json({ mealsRescued: 0 }));
   return router;
 });
 
-jest.mock('../src/backend/routes/cart', () => {
+jest.mock('../../src/backend/routes/cart', () => {
   const router = require('express').Router();
   router.post('/api/orders', (req, res) => res.json({ success: true }));
   return router;
 });
 
-jest.mock('../src/backend/routes/dashboard', () => {
+jest.mock('../../src/backend/routes/dashboard', () => {
   const router = require('express').Router();
   router.get('/dashboard/restaurants', (req, res) => res.json([]));
   return router;
@@ -32,9 +32,9 @@ const mockUsers = [
   { name: 'Test User', email: 'test@example.com', password: 'password123' }
 ];
 
-jest.mock('../src/backend/secrets/users.js', () => mockUsers, { virtual: true });
+jest.mock('../../src/backend/secrets/users.js', () => mockUsers, { virtual: true });
 
-const app = require('../src/backend/server');
+const app = require('../../src/backend/server');
 
 describe('Server Tests', () => {
   describe('Root Route', () => {

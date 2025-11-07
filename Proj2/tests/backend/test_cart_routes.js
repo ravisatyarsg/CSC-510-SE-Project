@@ -17,7 +17,7 @@ const mockFs = {
 
 jest.mock('fs', () => mockFs);
 
-const cartRoutes = require('../src/backend/routes/cart');
+const cartRoutes = require('../../src/backend/routes/cart');
 
 describe('Cart Routes Tests', () => {
   let app;

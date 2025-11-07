@@ -12,7 +12,7 @@ const csv = require('csv-parser');
 jest.mock('fs');
 jest.mock('csv-parser');
 
-const homeRoutes = require('../src/backend/routes/home');
+const homeRoutes = require('../../src/backend/routes/home');
 
 describe('Home Routes Tests', () => {
   let app;

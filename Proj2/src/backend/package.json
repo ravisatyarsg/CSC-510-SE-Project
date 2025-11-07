@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "jest --testPathPattern=tests/backend --coverage",
-    "test:watch": "jest --testPathPattern=tests/backend --watch"
+    "test": "cd ../.. && npx jest --config jest.config.js --coverage",
+    "test:watch": "cd ../.. && npx jest --config jest.config.js --watch"
   },
   "keywords": [],
   "author": "",
@@ -25,10 +25,12 @@
     "testEnvironment": "node",
     "coveragePathIgnorePatterns": [
       "/node_modules/",
-      "/tests/"
+      "/tests/",
+      "/data/"
     ],
     "testMatch": [
-      "**/tests/**/*.js"
-    ]
+      "**/tests/backend/**/*.js"
+    ],
+    "rootDir": "."
   }
 }

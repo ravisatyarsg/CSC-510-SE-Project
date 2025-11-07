@@ -14,7 +14,7 @@ const mockFs = {
 
 jest.mock('fs', () => mockFs);
 
-const dashboardRoutes = require('../src/backend/routes/dashboard');
+const dashboardRoutes = require('../../src/backend/routes/dashboard');
 
 describe('Dashboard Routes Tests', () => {
   let app;
